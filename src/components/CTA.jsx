@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const CTASection = styled.section`
   padding: 60px 20px;
@@ -52,12 +53,12 @@ const CTAButton = styled(Link)`
 `;
 
 const Cta = () => {
+  const { t } = useTranslation();
+
   return (
     <CTASection>
-      <CTAHeading>
-        On-Demand Emergency Car Assistance, Anytime, Anywhere
-      </CTAHeading>
-      <CTAButton to={"/landing-page/mobile"}>Join Route Today</CTAButton>
+      <CTAHeading>{t("CTAT")}</CTAHeading>
+      <CTAButton to={"/landing-page/mobile"}>{t("CTAD")}</CTAButton>
     </CTASection>
   );
 };

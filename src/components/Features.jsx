@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const FeaturesSection = styled.section`
@@ -78,34 +79,31 @@ const FeatureText = styled.p`
 `;
 
 const Features = () => {
+  const { t } = useTranslation();
   return (
     <FeaturesSection>
-      <FeaturesHeading>Why Choose Route?</FeaturesHeading>
+      <FeaturesHeading>{t("WhyChooseRoute")}</FeaturesHeading>
       <FeaturesList>
         <FeatureItem>
           <FeatureIcon>
             <FeatureImage src="/Why-two.svg" alt="Rapid Response" />
           </FeatureIcon>
-          <FeatureTitle>Rapid Response</FeatureTitle>
-          <FeatureText>We reach you quickly in emergencies.</FeatureText>
+          <FeatureTitle>{t("RapidResponse")}</FeatureTitle>
+          <FeatureText>{t("RapidResponseD")}</FeatureText>
         </FeatureItem>
         <FeatureItem>
           <FeatureIcon>
             <FeatureImage src="/Safety.png" alt="Safety First" />
           </FeatureIcon>
-          <FeatureTitle>Safety First</FeatureTitle>
-          <FeatureText>
-            We prioritize the safety of your vehicle and our team.
-          </FeatureText>
+          <FeatureTitle>{t("SafetyFirst")}</FeatureTitle>
+          <FeatureText>{t("SafetyFirstD")}</FeatureText>
         </FeatureItem>
         <FeatureItem>
           <FeatureIcon>
             <FeatureImage src="/Why-one.svg" alt="Versatility" />
           </FeatureIcon>
-          <FeatureTitle>Versatility</FeatureTitle>
-          <FeatureText>
-            Our fleet handles all types of vehicles and situations.
-          </FeatureText>
+          <FeatureTitle>{t("Versatility")}</FeatureTitle>
+          <FeatureText>{t("VersatilityD")}</FeatureText>
         </FeatureItem>
       </FeaturesList>
     </FeaturesSection>

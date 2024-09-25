@@ -3,8 +3,9 @@ import mobileImage from "/Splash-one.svg"; // Replace with your image path
 import anotherImage from "/Splash-two.svg"; // Replace with your image path
 import googlePlayLogo from "/GooglePlay.svg"; // Replace with your logo path
 import appStoreLogo from "/AppStore.svg"; // Replace with your logo path
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ReviewPageContainer = styled.div`
   background: linear-gradient(135deg, #f0f4f8 0%, #d0e4f0 100%);
@@ -100,10 +101,8 @@ const ButtonImage = styled.img`
 `;
 
 const BackButtonBox = styled.div`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10000;
+  display: inline-block;
+  padding: 20px 20px;
 `;
 
 const BackButton = styled(Link)`
@@ -111,18 +110,23 @@ const BackButton = styled(Link)`
   align-items: center;
   background-color: #00537a;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #003d4c;
   }
 
-  svg {
-    margin-right: 8px;
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    padding: 10px 20px;
+
+    svg {
+      font-size: 1.5em;
+    }
   }
 `;
 
@@ -146,43 +150,45 @@ const AdditionalImage = styled.img`
   animation: float 4s ease-in-out infinite reverse;
 `;
 
-const ReviewPage = () => (
-  <ReviewPageContainer>
-    <BackButtonBox>
-      <BackButton to="/landing-page">
-        <AiOutlineArrowLeft /> Back to Home
-      </BackButton>
-    </BackButtonBox>
-    <ReviewSection>
-      <ReviewTitle>Discover Our New App!</ReviewTitle>
-      <ReviewWrapper>
-        <ReviewCard>
-          <ReviewText>
-            Our brand new app is here to revolutionize your experience. Download
-            it now and enjoy a seamless, user-friendly interface that&apos;s
-            designed with you in mind.
-          </ReviewText>
-        </ReviewCard>
-        <ReviewCard>
-          <ReviewText>
-            Be among the first to experience the latest in app technology. Your
-            feedback is crucial, so get it now and let us know how we can make
-            it even better!
-          </ReviewText>
-        </ReviewCard>
-      </ReviewWrapper>
-      <DownloadButtons>
-        <Button href="https://play.google.com/store/apps/details?id=yourapp">
-          <ButtonImage src={googlePlayLogo} alt="Google Play" />
-        </Button>
-        <Button href="https://apps.apple.com/app/idyourapp">
-          <ButtonImage src={appStoreLogo} alt="App Store" />
-        </Button>
-      </DownloadButtons>
-    </ReviewSection>
-    <MobileImage src={mobileImage} alt="Mobile App" />
-    <AdditionalImage src={anotherImage} alt="Another View" />
-  </ReviewPageContainer>
-);
+const ReviewPage = () => {
+  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+
+  return (
+    <ReviewPageContainer>
+      <BackButtonBox>
+        <BackButton to="/landing-page">
+          {i18n.language === "ar" ? (
+            <AiOutlineArrowRight />
+          ) : (
+            <AiOutlineArrowLeft />
+          )}{" "}
+          {t("BacktoHome")}
+        </BackButton>
+      </BackButtonBox>
+      <ReviewSection>
+        <ReviewTitle>{t("DiscoverOurNewApp")}</ReviewTitle>
+        <ReviewWrapper>
+          <ReviewCard>
+            <ReviewText>{t("DiscoverOurNewAppR1")}</ReviewText>
+          </ReviewCard>
+          <ReviewCard>
+            <ReviewText>{t("DiscoverOurNewAppR2")}</ReviewText>
+          </ReviewCard>
+        </ReviewWrapper>
+        <DownloadButtons>
+          <Button href="https://play.google.com/store/apps/details?id=yourapp">
+            <ButtonImage src={googlePlayLogo} alt="Google Play" />
+          </Button>
+          <Button href="https://apps.apple.com/app/idyourapp">
+            <ButtonImage src={appStoreLogo} alt="App Store" />
+          </Button>
+        </DownloadButtons>
+      </ReviewSection>
+      <MobileImage src={mobileImage} alt="Mobile App" />
+      <AdditionalImage src={anotherImage} alt="Another View" />
+    </ReviewPageContainer>
+  );
+};
 
 export default ReviewPage;

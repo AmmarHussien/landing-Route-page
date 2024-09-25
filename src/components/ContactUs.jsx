@@ -2,49 +2,52 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaUser, FaEnvelope, FaRegPaperPlane } from "react-icons/fa";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 
 // Styled components
 const PageWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 86.5vh; /* Full viewport height */
-  background-color: #f7f7f7; /* Light gray background for contrast */
-  padding: 20px; /* Padding to prevent content from touching edges */
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+
+  background-color: #f7f7f7;
+  padding: 10px;
+
+  /* @media (min-width: 768px) {
+    padding: 20px;
+  } */
 `;
 
 const Container = styled.div`
-  max-width: 90%;
   width: 100%;
-  max-width: 600px; /* Set a maximum width for larger screens */
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 50px auto;
+  padding: 15px;
+  background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 
   @media (min-width: 768px) {
-    padding: 30px;
+    max-width: 40%;
+    padding: 40px;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 1.75rem;
+  margin-bottom: 15px;
   color: #333;
   text-align: center;
 
   @media (min-width: 768px) {
     font-size: 2.5rem;
+    margin-bottom: 20px;
   }
 `;
 
 const Section = styled.div`
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,7 +58,7 @@ const Section = styled.div`
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
   color: #444;
   text-align: center;
@@ -67,15 +70,15 @@ const SectionTitle = styled.h2`
 `;
 
 const Paragraph = styled.p`
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: #666;
   text-align: center;
-  margin: 0 0 15px;
+  margin-bottom: 10px;
 
   @media (min-width: 768px) {
     font-size: 1.1rem;
-    margin: 0 0 20px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -84,42 +87,47 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media (min-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 const Input = styled.input`
-  padding: 12px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  font-size: 1rem;
-  width: 100%;
+  font-size: 0.9rem;
 
   @media (min-width: 768px) {
     font-size: 1.1rem;
+    padding: 12px;
   }
 `;
 
 const Textarea = styled.textarea`
-  padding: 12px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  font-size: 1rem;
-  width: 100%;
+  font-size: 0.9rem;
+
   resize: vertical;
 
   @media (min-width: 768px) {
     font-size: 1.1rem;
+    padding: 12px;
   }
 `;
 
 const Button = styled.button`
   width: 100%;
-  max-width: 300px; /* Set a maximum width for better control */
-  padding: 12px 20px;
+  max-width: 250px; /* Smaller max width for smaller screens */
+  padding: 10px;
   border: none;
   border-radius: 6px;
   background-color: #00537a;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -128,6 +136,12 @@ const Button = styled.button`
 
   &:hover {
     background-color: #004466;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 300px; /* Larger max width for bigger screens */
+    font-size: 1.1rem;
+    padding: 12px;
   }
 `;
 
@@ -138,12 +152,8 @@ const ButtonWrapper = styled.div`
 `;
 
 const BackButtonBox = styled.div`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-
   @media (min-width: 768px) {
-    top: 30px;
+    top: 100px;
     left: 30px;
   }
 `;
@@ -153,51 +163,56 @@ const BackButton = styled(Link)`
   align-items: center;
   background-color: #00537a;
   color: white;
-  padding: 10px 15px;
+  padding: 8px 12px;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #004466;
+    background-color: #003d4c;
   }
 
   svg {
     margin-right: 8px;
-    font-size: 1.1rem;
-
-    @media (min-width: 768px) {
-      font-size: 1.2rem;
-    }
+    margin-left: 8px;
+    font-size: 1.1em;
   }
 
   @media (min-width: 768px) {
-    padding: 12px 20px;
     font-size: 1rem;
+    padding: 10px 20px;
+
+    svg {
+      font-size: 1.5em;
+    }
   }
 `;
 
-const IconWrapper = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 20px;
+const IconBox = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 10px;
+  margin-bottom: 15px;
 
   @media (min-width: 768px) {
-    top: 30px;
-    right: 30px;
+    gap: 15px;
   }
 `;
 
 const Icon = styled.div`
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #00537a;
 
   @media (min-width: 768px) {
     font-size: 1.5rem;
   }
+`;
+
+// No changes to Wrapper and Content, as they are already responsive
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Content = styled.div`
@@ -208,6 +223,9 @@ const Content = styled.div`
 `;
 
 const ContactUs = () => {
+  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -237,38 +255,41 @@ const ContactUs = () => {
   return (
     <PageWrapper>
       <Container>
-        <IconWrapper>
-          <Icon>
-            <FaUser />
-          </Icon>
-          <Icon>
-            <FaEnvelope />
-          </Icon>
-          <Icon>
-            <FaRegPaperPlane />
-          </Icon>
-        </IconWrapper>
-        <BackButtonBox>
-          <BackButton to="/landing-page">
-            <AiOutlineArrowLeft /> Back to Home
-          </BackButton>
-        </BackButtonBox>
+        <Wrapper>
+          <BackButtonBox>
+            <BackButton to="/landing-page">
+              {i18n.language === "ar" ? (
+                <AiOutlineArrowRight />
+              ) : (
+                <AiOutlineArrowLeft />
+              )}{" "}
+              {t("BacktoHome")}
+            </BackButton>
+          </BackButtonBox>
+          <IconBox>
+            <Icon>
+              <FaUser />
+            </Icon>
+            <Icon>
+              <FaEnvelope />
+            </Icon>
+            <Icon>
+              <FaRegPaperPlane />
+            </Icon>
+          </IconBox>
+        </Wrapper>
+
         <Content>
-          <Title>Contact Us</Title>
+          <Title>{t("ContactUs")}</Title>
           <Section>
-            <SectionTitle>We&apos;d Love to Hear from You</SectionTitle>
-            <Paragraph>
-              If you have any questions, feedback, or need assistance,
-            </Paragraph>
-            <Paragraph>
-              please fill out the form below and we will get back to you as soon
-              as possible.
-            </Paragraph>
+            <SectionTitle>{t("ContactUsT")}</SectionTitle>
+            <Paragraph>{t("ContactUsT1")}</Paragraph>
+            <Paragraph>{t("ContactUsT3")}</Paragraph>
             <Form onSubmit={handleSubmit}>
               <Input
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder={t("YourName")}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -276,14 +297,14 @@ const ContactUs = () => {
               <Input
                 type="email"
                 name="email"
-                placeholder="Your Email"
+                placeholder={t("YourEmail")}
                 value={formData.email}
                 onChange={handleChange}
                 required
               />
               <Textarea
                 name="message"
-                placeholder="Your Message"
+                placeholder={t("YourMessage")}
                 rows="6"
                 value={formData.message}
                 onChange={handleChange}
@@ -291,7 +312,7 @@ const ContactUs = () => {
               />
               <ButtonWrapper>
                 <Button type="submit">
-                  <FaRegPaperPlane /> Send Message
+                  <FaRegPaperPlane /> {t("SendMessage")}
                 </Button>
               </ButtonWrapper>
             </Form>

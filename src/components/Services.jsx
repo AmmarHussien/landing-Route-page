@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const ServicesSection = styled.section`
@@ -85,63 +86,52 @@ const ServiceDescription = styled.p`
 `;
 
 const Services = () => {
+  const { t } = useTranslation();
   return (
     <ServicesSection id="services">
-      <ServicesHeading>Our Services</ServicesHeading>
+      <ServicesHeading>{t("OurServices")}</ServicesHeading>
       <ServiceCards>
         <ServiceCard>
           <IconContainer>
             <Icon src="/service-one.svg" alt="Car Towing" />
           </IconContainer>
-          <ServiceTitle>Car Towing</ServiceTitle>
-          <ServiceDescription>
-            24/7 emergency towing service for any breakdown or accident.
-          </ServiceDescription>
+          <ServiceTitle>{t("CarTowing")}</ServiceTitle>
+          <ServiceDescription>{t("CarTowingD")}</ServiceDescription>
         </ServiceCard>
         <ServiceCard>
           <IconContainer>
             <Icon src="/service-two.svg" alt="Battery Changes" />
           </IconContainer>
-          <ServiceTitle>Battery Changes</ServiceTitle>
-          <ServiceDescription>
-            Comprehensive roadside assistance for Battery changes.
-          </ServiceDescription>
+          <ServiceTitle>{t("BatteryChanges")}</ServiceTitle>
+          <ServiceDescription>{t("BatteryChangesD")}</ServiceDescription>
         </ServiceCard>
         <ServiceCard>
           <IconContainer>
             <Icon src="/service-three.svg" alt="Car Refuling" />
           </IconContainer>
-          <ServiceTitle>Car Refuling</ServiceTitle>
-          <ServiceDescription>
-            Comprehensive roadside assistance for fuel delivery.
-          </ServiceDescription>
+          <ServiceTitle>{t("CarRefuling")}</ServiceTitle>
+          <ServiceDescription>{t("CarRefulingD")}</ServiceDescription>
         </ServiceCard>
         <ServiceCard>
           <IconContainer>
             <Icon src="/service-four.svg" alt="Tire Inflate" />
           </IconContainer>
-          <ServiceTitle>Tire Inflate</ServiceTitle>
-          <ServiceDescription>
-            Comprehensive roadside assistance for Tire Inflatey.
-          </ServiceDescription>
+          <ServiceTitle>{t("TireInflate")}</ServiceTitle>
+          <ServiceDescription>{t("TireInflateD")}</ServiceDescription>
         </ServiceCard>
         <ServiceCard>
           <IconContainer>
             <Icon src="/service-five.svg" alt="Oil Change" />
           </IconContainer>
-          <ServiceTitle>Oil Change</ServiceTitle>
-          <ServiceDescription>
-            Comprehensive roadside assistance for Oil Change.
-          </ServiceDescription>
+          <ServiceTitle>{t("OilChange")}</ServiceTitle>
+          <ServiceDescription>{t("OilChangeD")}</ServiceDescription>
         </ServiceCard>
         <ServiceCard>
           <IconContainer>
             <Icon src="/service-six.svg" alt="Car Wash" />
           </IconContainer>
-          <ServiceTitle>Car Wash</ServiceTitle>
-          <ServiceDescription>
-            Comprehensive roadside assistance for Car Wash.
-          </ServiceDescription>
+          <ServiceTitle>{t("CarWash")}</ServiceTitle>
+          <ServiceDescription>{t("CarWashD")}</ServiceDescription>
         </ServiceCard>
       </ServiceCards>
     </ServicesSection>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-scroll"; // Using react-scroll for smooth scrolling
-//import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = styled.section`
   background-image: url("/Never-Get-Stuck.png");
@@ -81,18 +81,16 @@ const CTAButton = styled.button`
 `;
 
 const Hero = () => {
-  //const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <HeroSection>
       <HeroOverlay>
         <HeroContent>
-          <HeroHeading>Revolutionize Trucking with Route</HeroHeading>
-          <HeroParagraph>
-            Your Ultimate Partner in Freight Management
-          </HeroParagraph>
+          <HeroHeading>{t("heroWelcome")}</HeroHeading>
+          <HeroParagraph>{t("heroDescription")} </HeroParagraph>
           <CTAButton>
             <Link to="about" smooth={true} duration={500}>
-              Get Started
+              {t("heroButton")}
             </Link>
           </CTAButton>
         </HeroContent>

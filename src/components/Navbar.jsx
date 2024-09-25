@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link as LinkToRoute } from "react-router-dom";
+import LanguageToggle from "./LanguageToggle";
+import { useTranslation } from "react-i18next";
 
 // Styled components for the NavBar
 const NavBarContainer = styled.header`
@@ -36,6 +38,7 @@ const NavWrapper = styled.div`
 
 const Logo = styled.img`
   height: 40px; /* Adjust size as needed */
+  margin-right: 40px;
 
   @media (max-width: 768px) {
     height: 30px; /* Adjust logo size for mobile */
@@ -118,9 +121,10 @@ const MenuToggle = styled.button`
 const NavBar = () => {
   const [showNavBar, setShowNavBar] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const { t } = useTranslation();
 
   const handleScroll = () => {
-    if (window.scrollY > 150) {
+    if (window.scrollY > 1) {
       setShowNavBar(true);
     } else {
       setShowNavBar(false);
@@ -143,26 +147,29 @@ const NavBar = () => {
         <MenuToggle onClick={toggleMobileMenu}>☰</MenuToggle>
         <NavLinks showMobileMenu={showMobileMenu}>
           <NavLink onClick={() => setShowMobileMenu(false)} to="/landing-page">
-            Home
+            {t("navHome")}
           </NavLink>
           <NavLink
             onClick={() => setShowMobileMenu(false)}
             to="/landing-page/privacy-policy"
           >
             {" "}
-            Privacy Policy
+            {t("navPrivacy")}
           </NavLink>
           <NavLink
             onClick={() => setShowMobileMenu(false)}
             to="/landing-page/terms-of-service"
           >
-            Terms of Service
+            {t("navTerms")}
           </NavLink>
           <NavLink
             onClick={() => setShowMobileMenu(false)}
             to="/landing-page/contact-us"
           >
-            Contact Us
+            {t("navContact")}
+          </NavLink>
+          <NavLink>
+            <LanguageToggle />
           </NavLink>
         </NavLinks>
       </NavWrapper>

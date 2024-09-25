@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const VisionMissionSection = styled.section`
@@ -53,21 +54,16 @@ const Text = styled.p`
 `;
 
 const VisionMission = () => {
+  const { t } = useTranslation();
   return (
     <VisionMissionSection>
       <VisionMissionCard>
-        <Heading>Our Vision</Heading>
-        <Text>
-          To revolutionize vehicle recovery with state-of-the-art technology and
-          unmatched reliability.
-        </Text>
+        <Heading>{t("OurVision")}</Heading>
+        <Text>{t("OurVisionD")}</Text>
       </VisionMissionCard>
       <VisionMissionCard>
-        <Heading>Our Mission</Heading>
-        <Text>
-          To provide efficient and safe winch car services, ensuring customer
-          satisfaction and vehicle safety at all times.
-        </Text>
+        <Heading>{t("OurMission")}</Heading>
+        <Text>{t("OurMissionD")}</Text>
       </VisionMissionCard>
     </VisionMissionSection>
   );

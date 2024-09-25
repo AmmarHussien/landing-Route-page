@@ -6,29 +6,28 @@ import {
   FaShieldAlt,
   FaExclamationTriangle,
   FaCalendarAlt,
-  FaEnvelope,
 } from "react-icons/fa";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 
 // Styled components
 const Container = styled.div`
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px;
   background: linear-gradient(135deg, #e9ecef, #f8f9fa);
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  font-family: "Arial", sans-serif;
 
-  @media (max-width: 768px) {
-    max-width: 100%;
-    padding: 20px;
+  @media (min-width: 768px) {
+    max-width: 80%;
+    padding: 40px;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
   color: #333;
   text-align: center;
   font-weight: bold;
@@ -36,35 +35,35 @@ const Title = styled.h1`
   letter-spacing: 1px;
 
   @media (min-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 3em;
+    margin-bottom: 30px;
     letter-spacing: 2px;
   }
 `;
 
 const Section = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   transition: all 0.3s ease-in-out;
 
   &:hover {
     transform: translateY(-5px);
   }
+
+  @media (min-width: 768px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #00537a;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #005379;
   display: flex;
   align-items: center;
-  font-weight: bold;
-
-  svg {
-    margin-right: 10px;
-    font-size: 1.25rem;
-  }
 
   @media (min-width: 768px) {
-    font-size: 1.75rem;
+    font-size: 1.75em;
+    margin-bottom: 15px;
   }
 `;
 
@@ -81,20 +80,9 @@ const Paragraph = styled.p`
   }
 `;
 
-const LinkStyled = styled(Link)`
-  color: #00537a;
-  text-decoration: none;
-  font-weight: bold;
-
-  &:hover {
-    color: #0056b3;
-    text-decoration: underline;
-  }
-`;
-
 const BackButtonBox = styled.div`
   display: inline-block;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 `;
 
 const BackButton = styled(Link)`
@@ -102,98 +90,113 @@ const BackButton = styled(Link)`
   align-items: center;
   background-color: #00537a;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #004466;
+    background-color: #003d4c;
   }
 
   svg {
     margin-right: 8px;
+    margin-left: 8px;
+    font-size: 1.2em;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    padding: 10px 20px;
+
+    svg {
+      font-size: 1.5em;
+    }
+  }
+`;
+
+const Icon = styled.span`
+  margin-right: 8px;
+  margin-left: 8px;
+  font-size: 1.1em;
+  color: #f5a201;
+
+  svg {
+    fill: currentColor;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.2em;
   }
 `;
 
 const TermsOfService = () => {
+  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+
   return (
     <Container>
       <BackButtonBox>
         <BackButton to="/landing-page">
-          <AiOutlineArrowLeft /> Back to Home
+          {i18n.language === "ar" ? (
+            <AiOutlineArrowRight />
+          ) : (
+            <AiOutlineArrowLeft />
+          )}{" "}
+          {t("BacktoHome")}
         </BackButton>
       </BackButtonBox>
-      <Title>Terms of Service</Title>
+      <Title>{t("TermsofService")}</Title>
 
       <Section>
         <SectionTitle>
-          <FaRegLightbulb color="#F5A201" /> Introduction
+          <Icon>
+            <FaRegLightbulb />{" "}
+          </Icon>
+          {t("IntroductionT")}
         </SectionTitle>
-        <Paragraph>
-          Welcome to Route. These Terms of Service govern your use of our
-          website and mobile application. By using our services, you agree to
-          these terms.
-        </Paragraph>
+        <Paragraph>{t("IntroductionTD")}</Paragraph>
       </Section>
 
       <Section>
         <SectionTitle>
-          <FaCheckCircle color="#F5A201" /> Acceptance of Terms
+          <Icon>
+            <FaCheckCircle />
+          </Icon>
+          {t("AcceptanceofTerms")}
         </SectionTitle>
-        <Paragraph>
-          By accessing or using our services, you agree to comply with and be
-          bound by these Terms of Service. If you do not agree, you should not
-          use our services.
-        </Paragraph>
+        <Paragraph>{t("AcceptanceofTermsD")}</Paragraph>
       </Section>
 
       <Section>
         <SectionTitle>
-          <FaShieldAlt color="#F5A201" /> Use of Our Services
+          <Icon>
+            <FaShieldAlt />
+          </Icon>
+          {t("UseofOurServices")}
         </SectionTitle>
-        <Paragraph>
-          You agree to use our services only for lawful purposes and in
-          accordance with these terms. You must not use our services in any way
-          that causes, or may cause, damage to the website or interferes with
-          other users access.
-        </Paragraph>
+        <Paragraph>{t("UseofOurServicesD")}</Paragraph>
       </Section>
 
       <Section>
         <SectionTitle>
-          <FaExclamationTriangle color="#F5A201" /> Limitation of Liability
+          <Icon>
+            <FaExclamationTriangle />{" "}
+          </Icon>
+          {t("LimitationofLiability")}
         </SectionTitle>
-        <Paragraph>
-          We are not liable for any damages or losses arising from your use of
-          our services or any content provided through our website and
-          application.
-        </Paragraph>
+        <Paragraph>{t("LimitationofLiabilityD")}</Paragraph>
       </Section>
 
       <Section>
         <SectionTitle>
-          <FaCalendarAlt color="#F5A201" /> Changes to These Terms
+          <Icon>
+            <FaCalendarAlt />
+          </Icon>{" "}
+          {t("ChangestoTheseTerms")}
         </SectionTitle>
-        <Paragraph>
-          We may update these Terms of Service from time to time. Any changes
-          will be posted on this page with an updated revision date.
-        </Paragraph>
-      </Section>
-
-      <Section>
-        <SectionTitle>
-          <FaEnvelope color="#F5A201" /> Contact Us
-        </SectionTitle>
-        <Paragraph>
-          If you have any questions about these Terms of Service, please contact
-          us at{" "}
-          <LinkStyled to="mailto:support@example.com">
-            support@example.com
-          </LinkStyled>
-          .
-        </Paragraph>
+        <Paragraph>{t("ChangestoTheseTermsD")}</Paragraph>
       </Section>
     </Container>
   );

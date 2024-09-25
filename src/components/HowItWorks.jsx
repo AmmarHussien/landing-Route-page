@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const HowItWorksSection = styled.section`
@@ -79,36 +80,31 @@ const StepDescription = styled.p`
 `;
 
 const HowItWorks = () => {
+  const { t } = useTranslation();
   return (
     <HowItWorksSection id="about">
-      <HowItWorksHeading>How It Works</HowItWorksHeading>
+      <HowItWorksHeading>{t("HowItWorks")}</HowItWorksHeading>
       <StepsContainer>
         <Step>
           <IconContainer>
             <Icon src="/how-one.svg" alt="Request Service" />
           </IconContainer>
-          <StepTitle>Request Service</StepTitle>
-          <StepDescription>
-            Contact us to request immediate tow truck assistance.
-          </StepDescription>
+          <StepTitle>{t("RequestService")}</StepTitle>
+          <StepDescription>{t("RequestServiceD")} </StepDescription>
         </Step>
         <Step>
           <IconContainer>
             <Icon src="/how-two.svg" alt="Dispatch" />
           </IconContainer>
-          <StepTitle>Dispatch & Arrival</StepTitle>
-          <StepDescription>
-            Our team dispatches a tow truck to your location quickly.
-          </StepDescription>
+          <StepTitle>{t("Dispatch&Arrival")}</StepTitle>
+          <StepDescription>{t("Dispatch&ArrivalD")} </StepDescription>
         </Step>
         <Step>
           <IconContainer>
             <Icon src="/how-three.svg" alt="Vehicle Recovery" />
           </IconContainer>
-          <StepTitle>Vehicle Recovery</StepTitle>
-          <StepDescription>
-            We recover your vehicle safely and efficiently.
-          </StepDescription>
+          <StepTitle>{t("VehicleRecovery")}</StepTitle>
+          <StepDescription>{t("VehicleRecoveryD")} </StepDescription>
         </Step>
       </StepsContainer>
     </HowItWorksSection>

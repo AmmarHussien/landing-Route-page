@@ -1,4 +1,142 @@
 {
-  "welcome": "Welcome to our application!",
-  "description": "This is a sample application demonstrating localization."
+  "navHome": "Home",
+  "navPrivacy": "Privacy Policy",
+  "navTerms": "Terms of Service",
+  "navContact": "Contact Us",
+
+  "heroWelcome": "Revolutionize Trucking with Route",
+  "heroDescription": "Your Ultimate Partner in Route Management",
+  "heroButton": "Get Started",
+
+  "HowItWorks": "How It Works !",
+  "RequestService": "Request Service",
+  "RequestServiceD": "Contact us to request immediate tow truck assistance.",
+  "Dispatch&Arrival": "Dispatch & Arrival",
+  "Dispatch&ArrivalD": "Our team dispatches a tow truck to your location quickly.",
+  "VehicleRecovery": "Vehicle Recovery",
+  "VehicleRecoveryD": "We recover your vehicle safely and efficiently.",
+
+  "WhyChooseRoute": "Why Choose Route ?",
+  "RapidResponse": "Rapid Response",
+  "RapidResponseD": "We reach you quickly in emergencies.",
+  "SafetyFirst": "Safety First",
+  "SafetyFirstD": "We prioritize the safety of your vehicle and our team.",
+  "Versatility": "Versatility",
+  "VersatilityD": "Our fleet handles all types of vehicles and situations.",
+
+  "OurVision": "Our Vision",
+  "OurVisionD": "To revolutionize vehicle recovery with state-of-the-art technology and unmatched reliability.",
+  "OurMission": "Our Mission",
+  "OurMissionD": "To provide efficient and safe winch car services, ensuring customer satisfaction and vehicle safety at all times.",
+
+  "OurServices": "Our Services",
+  "CarTowing": "Car Towing",
+  "CarTowingD": "24/7 emergency towing service for any breakdown or accident.",
+  "BatteryChanges": "Battery Changes",
+  "BatteryChangesD": "Comprehensive roadside assistance for Battery changes.",
+  "CarRefuling": "Car Refuling",
+  "CarRefulingD": "Comprehensive roadside assistance for Car Refuling.",
+  "TireInflate": "Tire Inflate",
+  "TireInflateD": "Comprehensive roadside assistance for Tire Inflate.",
+  "OilChange": "Oil Change",
+  "OilChangeD": "Comprehensive roadside assistance for Oil Change.",
+  "CarWash": "Car Wash",
+  "CarWashD": "Comprehensive roadside assistance for Car Wash.",
+
+  "CTAT": " On-Demand Emergency Car Assistance, Anytime, Anywhere",
+  "CTAD": "Join Route Today",
+
+  "Footer": " All Rights Reserved",
+
+  "BacktoHome": "Back to Home",
+  "PrivacyPolicy": "Privacy Policy",
+
+  "Introduction": "Introduction",
+  "IntroductionD": "Route built the Route app as a commercial application. This SERVICE is provided by Route and is intended for use as is. This Privacy Policy explains how Route collects, uses, discloses, and safeguards your personal information when you use our mobile application. By choosing to use our Service, you agree to the collection and use of information in accordance with this policy. The personal information we collect is used to provide and improve the Service, and we will not use or share your information with anyone except as described in this Privacy Policy. The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at Route unless otherwise defined in this Privacy Policy.",
+
+  "InformationWeCollect": "Information We Collect And Use",
+  "InformationWeCollectD": "For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to your name, email, phone number, and vehicle information. The information that we request will be retained by us and used as described in this privacy policy. The app also uses",
+  "InformationWeCollectD2": "The app also use third-party services that may collect information to identify you.",
+  "InformationWeCollectD3": "Third-Party Service Providers:",
+  "InformationWeCollectD4": "Google Play Services",
+  "InformationWeCollectD5": "Firebase Crashlytics",
+  "InformationWeCollectD6": "Google Maps",
+  "InformationWeCollectD7": "We may collect the following types of information.",
+  "InformationWeCollectD8": "Personal Information: Name, email address, phone number, and payment details.",
+  "InformationWeCollectD9": "Location Data: Real-time location information when the app is in use.",
+  "InformationWeCollectD10": "Usage Data: Information on how you use the app, such as the features you use and your preferences.",
+  "InformationWeCollectD11": "Payment Information: Credit card details, billing address, and transaction history.",
+
+  "HowWeUse": "How We Use Your Information",
+  "HowWeUse1": "We use the collected data for various purposes:",
+  "HowWeUse2": "To provide and maintain our service.",
+  "HowWeUse3": "To manage your account and provide customer support.",
+  "HowWeUse4": "To monitor usage and improve the app.",
+  "HowWeUse5": "To process payments and manage transactions.",
+  "HowWeUse6": "To send notifications related to your transactions and usage of the app.",
+
+  "Location": "Location and Tracking",
+  "LocationD": "To enhance your experience and provide timely assistance, the Route app will request permission to track your current location. This is essential for delivering services such as dispatching help to your exact location quickly. Location data is accessed through the Google Maps service to ensure the fastest and most accurate support.",
+
+  "LogData": "Log Data",
+  "LogDataD": "Whenever you use our Service, in the event of an error in the app, we collect data and information (via third-party services) from your device called Log Data. This may include details such as your device’s IP address, device name, operating system version, the configuration of the app during use, the time and date of your use, and other statistics.",
+
+  "Cookies": "Cookies",
+  "CookiesD": "Cookies are small data files commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device&apos;s internal memory. This Service does not explicitly use cookies. However, the app may employ third-party code and libraries that use cookies to gather information and enhance their services. You can choose to either accept or refuse these cookies and know when one is sent to your device. If you decline our cookies, some portions of the Service may not function properly.",
+
+  "ServiceProviders": "Service Providers",
+  "ServiceProviders1": "We may employ third-party companies and individuals for the following reasons:",
+  "ServiceProviders2": "To facilitate our Service",
+  "ServiceProviders3": "To provide the Service on our behalf",
+  "ServiceProviders4": "To perform Service-related services",
+  "ServiceProviders5": "To assist us in analyzing how our Service is used",
+  "ServiceProviders6": "We want to inform users that these third parties have access to your personal information, solely to perform the tasks assigned to them on our behalf. They are obligated not to disclose or use the information for any other purpose.",
+
+  "SharingYourInformation": "Sharing Your Information",
+  "SharingYourInformation1": "We may share your information with:",
+  "SharingYourInformation2": "Service Providers: To facilitate our services, including payment processing, fraud prevention, and customer support.",
+  "SharingYourInformation3": "Payment Processors: To process your payment transactions securely.",
+  "SharingYourInformation4": "Law Enforcement: If required by law or to protect our rights and property.",
+
+  "PaymentSecurity": "Payment Security",
+  "PaymentSecurityD": "We prioritize the security of your payment information. We use secure payment gateways and encrypt sensitive data during transmission to ensure your payment details are protected.",
+
+  "DataSecurity": "Data Security",
+  "DataSecurityD": "We value your trust in providing us with your personal information, and we are committed to using commercially acceptable means to protect it. However, please be aware that no method of transmission over the internet or electronic storage is completely secure. While we strive to use strong security measures, we cannot guarantee absolute security.",
+
+  "LinkstoOtherSites": "Links to Other Sites",
+  "LinkstoOtherSitesD": "Our Service may contain links to other websites. If you click on a third-party link, you will be directed to that site. Please note that these external websites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these sites. We are not responsible for the content, privacy policies, or practices of any third-party websites or services. security.",
+
+  "Children’sPrivacy": "Children’s Privacy",
+  "Children’sPrivacyD": "Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If we discover that a child under 13 has provided us with personal information, we will delete this information from our servers immediately. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so we can take the necessary steps.",
+
+  "ChangesPolicy": "Changes to This Privacy Policy",
+  "ChangesPolicyD": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.",
+
+  "ContactUs": "Contact Us",
+  "ContactUsD": "If you have any questions or concerns about this Privacy Policy, please contact us at: ",
+
+  "TermsofService": "Terms of Service",
+  "IntroductionT": "Introduction",
+  "IntroductionTD": "Welcome to Route. These Terms of Service govern your use of our website and mobile application. By using our services, you agree to these terms.",
+  "AcceptanceofTerms": "Acceptance of Terms",
+  "AcceptanceofTermsD": "By accessing or using our services, you agree to comply with and be bound by these Terms of Service. If you do not agree, you should not use our services.",
+  "UseofOurServices": "Use of Our Services",
+  "UseofOurServicesD": "You agree to use our services only for lawful purposes and in accordance with these terms. You must not use our services in any way that causes, or may cause, damage to the website or interferes with other users access.",
+  "LimitationofLiability": "Limitation of Liability",
+  "LimitationofLiabilityD": " We are not liable for any damages or losses arising from your use of our services or any content provided through our website and application.",
+  "ChangestoTheseTerms": "Changes to These Terms",
+  "ChangestoTheseTermsD": "We may update these Terms of Service from time to time. Any changes will be posted on this page with an updated revision date.",
+
+  "ContactUsT": "We'd Love to Hear from You",
+  "ContactUsT1": "If you have any questions, feedback, or need assistance,",
+  "ContactUsT3": "please fill out the form below and we will get back to you as soon as possible.",
+  "YourName": "Your Name",
+  "YourEmail": "Your Email",
+  "YourMessage": "Your Message",
+  "SendMessage": "Send Message",
+
+  "DiscoverOurNewApp": "Discover Our New App!",
+  "DiscoverOurNewAppR1": "Our brand new app is here to revolutionize your experience. Download it now and enjoy a seamless, user-friendly interface that's designed with you in mind.",
+  "DiscoverOurNewAppR2": "Be among the first to experience the latest in app technology. Your feedback is crucial, so get it now and let us know how we can make it even better!"
 }
