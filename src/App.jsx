@@ -32,9 +32,9 @@ const App = () => {
           <ScrollToTop />
           <Routes>
             {/* Redirect any invalid route to home page */}
-            <Route path="*" element={<Navigate to="/landing-page" />} />
+            <Route path="*" element={<Navigate to="/" />} />
 
-            <Route path="/landing-page" element={<Layout />}>
+            <Route path="/" element={<Layout />}>
               <Route
                 index
                 element={

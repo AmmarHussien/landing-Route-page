@@ -146,26 +146,23 @@ const NavBar = () => {
         <Logo src="/Logo.svg" alt="Logo" />
         <MenuToggle onClick={toggleMobileMenu}>☰</MenuToggle>
         <NavLinks showMobileMenu={showMobileMenu}>
-          <NavLink onClick={() => setShowMobileMenu(false)} to="/landing-page">
+          <NavLink onClick={() => setShowMobileMenu(false)} to="/">
             {t("navHome")}
           </NavLink>
           <NavLink
             onClick={() => setShowMobileMenu(false)}
-            to="/landing-page/privacy-policy"
+            to="/privacy-policy"
           >
             {" "}
             {t("navPrivacy")}
           </NavLink>
           <NavLink
             onClick={() => setShowMobileMenu(false)}
-            to="/landing-page/terms-of-service"
+            to="/terms-of-service"
           >
             {t("navTerms")}
           </NavLink>
-          <NavLink
-            onClick={() => setShowMobileMenu(false)}
-            to="/landing-page/contact-us"
-          >
+          <NavLink onClick={() => setShowMobileMenu(false)} to="/contact-us">
             {t("navContact")}
           </NavLink>
           <NavLink>

@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import mobileImage from "/Splash-one.svg"; // Replace with your image path
 import anotherImage from "/Splash-two.svg"; // Replace with your image path
-import googlePlayLogo from "/GooglePlay.svg"; // Replace with your logo path
-import appStoreLogo from "/AppStore.svg"; // Replace with your logo path
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -178,10 +176,10 @@ const ReviewPage = () => {
         </ReviewWrapper>
         <DownloadButtons>
           <Button href="https://play.google.com/store/apps/details?id=yourapp">
-            <ButtonImage src={googlePlayLogo} alt="Google Play" />
+            <ButtonImage src="/GooglePlay.svg" alt="Google Play" />
           </Button>
           <Button href="https://apps.apple.com/app/idyourapp">
-            <ButtonImage src={appStoreLogo} alt="App Store" />
+            <ButtonImage src="/AppStore.svg" alt="App Store" />
           </Button>
         </DownloadButtons>
       </ReviewSection>

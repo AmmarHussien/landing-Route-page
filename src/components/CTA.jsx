@@ -58,7 +58,7 @@ const Cta = () => {
   return (
     <CTASection>
       <CTAHeading>{t("CTAT")}</CTAHeading>
-      <CTAButton to={"/landing-page/mobile"}>{t("CTAD")}</CTAButton>
+      <CTAButton to={"/mobile"}>{t("CTAD")}</CTAButton>
     </CTASection>
   );
 };

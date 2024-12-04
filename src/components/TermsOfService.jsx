@@ -138,7 +138,7 @@ const TermsOfService = () => {
   return (
     <Container>
       <BackButtonBox>
-        <BackButton to="/landing-page">
+        <BackButton to="/">
           {i18n.language === "ar" ? (
             <AiOutlineArrowRight />
           ) : (
