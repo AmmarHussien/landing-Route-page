@@ -118,7 +118,7 @@ const Testimonials = () => {
 
   return (
     <TestimonialsSection>
-      <TestimonialsHeading>What Our Clients Say</TestimonialsHeading>
+      <TestimonialsHeading>What Our Clients Say</ TestimonialsHeading>
       <div style={{ position: "relative" }}>
         <TestimonialSlider ref={sliderRef}>
           <TestimonialItem>
